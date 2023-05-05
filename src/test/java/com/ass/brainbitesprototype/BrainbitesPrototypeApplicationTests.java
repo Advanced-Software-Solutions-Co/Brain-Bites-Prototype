@@ -8,6 +8,7 @@ class BrainbitesPrototypeApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Attack On Titan");
 	}
 
 }
