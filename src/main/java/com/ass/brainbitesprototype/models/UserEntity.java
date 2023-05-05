@@ -23,8 +23,8 @@ public class UserEntity {
     private String username;
     private String email;
     private String password;
-    private String firstname;
-    private String lastname;
+    private String first_name;
+    private String last_name;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",
