@@ -8,6 +8,8 @@ public class BrainbitesPrototypeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BrainbitesPrototypeApplication.class, args);
+		System.out.println("Hello Test form RC");
 	}
+
 
 }
