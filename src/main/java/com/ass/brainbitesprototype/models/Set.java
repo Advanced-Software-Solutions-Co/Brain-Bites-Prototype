@@ -23,7 +23,6 @@ public class Set {
     private String title;
     private String photoUrl;
     private String content;
-    //should I add strings for Flashcards and Quiz?
     @CreationTimestamp
     private LocalDateTime createdOn;
     @UpdateTimestamp

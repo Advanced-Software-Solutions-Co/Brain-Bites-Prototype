@@ -1,6 +1,6 @@
 package com.ass.brainbitesprototype.controllers;
 
-//import dto
+import com.ass.brainbitesprototype.dtos.SetDto;
 import com.ass.brainbitesprototype.models.Set;
 //import service
 import jakarta.validation.Valid;
