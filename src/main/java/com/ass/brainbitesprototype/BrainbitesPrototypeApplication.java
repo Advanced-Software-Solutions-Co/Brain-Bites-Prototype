@@ -10,4 +10,5 @@ public class BrainbitesPrototypeApplication {
 		SpringApplication.run(BrainbitesPrototypeApplication.class, args);
 	}
 
+
 }
