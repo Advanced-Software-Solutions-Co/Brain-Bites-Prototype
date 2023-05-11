@@ -1,36 +1,35 @@
 package com.ass.brainbitesprototype.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor; //makes constructors
-import lombok.Builder; //build the entity/model
-import lombok.Data; //provide get and set methods
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Entity
-@Table(name = "sets")
-public class Set {
+@Entity(name = "flashcards")
+public class Flashcard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+    private String term;
+    private String definition;
     private String photoUrl;
-    private String content;
+
     @CreationTimestamp
     private LocalDateTime createdOn;
     @UpdateTimestamp
     private LocalDateTime updatedOn;
 
-    // Hold the flashcards that are attached to this set.
-    @OneToMany(mappedBy = "set", cascade = CascadeType.REMOVE)
-    private List<Flashcard> flashcards = new ArrayList<>();
+    // Join each flashcard to its belonging set.
+    @ManyToOne
+    @JoinColumn(name = "set_id", nullable = false)
+    private Set set;
 }
