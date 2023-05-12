@@ -28,6 +28,36 @@ public class SetServiceImpl implements SetService {
         return sets.stream().map((Set) -> mapToSetDto(Set)).collect(Collectors.toList());
     }
 
+    @Override
+    public Set saveSet(SetDto setDto) {
+        Set set = mapToSet(setDto);
+        return setRepository.save(set);
+    }
+
+    @Override
+    public SetDto findSetById(Long setId) {
+        Set set = setRepository.findById(setId).get();
+        return mapToSetDto(set);
+    }
+
+    @Override
+    public void updateSet(SetDto setDto) {
+        Set set = mapToSet(setDto);
+        setRepository.save(set);
+    }
+
+    private Set mapToSet(SetDto set) {
+        Set setDto = Set.builder()
+                .id(set.getId())
+                .title(set.getTitle())
+                .photoUrl(set.getPhotoUrl())
+                .content(set.getContent())
+                .createdOn(set.getCreatedOn())
+                .updatedOn(set.getUpdatedOn())
+                .build();
+        return setDto;
+    }
+
     private SetDto mapToSetDto(Set set) {
         SetDto setDto = SetDto.builder()
                 .id(set.getId())

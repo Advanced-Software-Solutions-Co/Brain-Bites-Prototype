@@ -68,9 +68,10 @@
                         <div class="card-body">
                             <h2 th:text="${set.title}"  class="card-title"></h2>
                             <p th:text="${set.content}" class="card-text"></p>
-                            <div class="col-lg-7"><img src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." class="img-thumbnail"/></div>
+                            <div class="col-lg-7"><img th:src="${set.photoUrl}" alt="..." class="img-thumbnail"/></div>
                         </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Study</a></div>
+                        <div class="btn btn-primary btn-md center-block"><a class="btn btn-primary btn-sm" href="#!">Study</a></div>
+                        <div class="btn btn-info btn-md center-block"><a class="btn btn-info btn-sm" th:href="@{/sets/{setId}/edit(setId=${set.id})}">Edit</a></div>
                     </div>
                 </div>
     </main>

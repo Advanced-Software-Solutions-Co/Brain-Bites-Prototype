@@ -7,4 +7,9 @@ import java.util.List;
 
 public interface SetService {
     List<SetDto> findAllSets();
+    Set saveSet(SetDto setDto);
+
+    SetDto findSetById(Long setId);
+
+    void updateSet(SetDto set);
 }
