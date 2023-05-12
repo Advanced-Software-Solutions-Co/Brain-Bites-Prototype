@@ -1,0 +1,149 @@
+[33mcommit 1697dd10832aa35ec1fab03c79ad3c8b84ff2e71[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mflashcards[m[33m)[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Wed May 10 19:06:31 2023 -0700
+
+    Create and stylize landing page signup form
+
+[33mcommit 6cbd42fc213156e3c4ef63eb614f59203ef044c3[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Tue May 9 23:05:59 2023 -0700
+
+    Configure new postgres database with fly.io for a now-running application
+
+[33mcommit 3d6267106c738baad2c0ed056daefabcfb3b46b8[m
+Author: RCald_qdveicr <RCaldera674@gmail.com>
+Date:   Tue May 9 20:46:11 2023 -0700
+
+    add ClassroomPageController and ClassroomDto
+
+[33mcommit 5840daac5d9481cc29809ea5599349ca807532d2[m
+Author: Kaielo <kdeocampo02@gmail.com>
+Date:   Tue May 9 19:39:11 2023 -0700
+
+    Modify Set Controllers, Set Dto, Set Model, Set Service and added Set Repository
+
+[33mcommit dc3bc8edb09760363df7a1a5816ce291039b231a[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Tue May 9 19:21:24 2023 -0700
+
+    Add Set files into some folders
+
+[33mcommit 301de5a6bf015f693334f2cb400315624a106dfd[m[33m ([m[1;32mcreate-user-model[m[33m)[m
+Merge: 8420274 f3d6ecc
+Author: Kaielo <kdeocampo02@gmail.com>
+Date:   Tue May 9 18:27:50 2023 -0700
+
+    Testing
+
+[33mcommit 8420274c016fd00c04d82d977a389eddf7eb3660[m
+Author: Kaielo <kdeocampo02@gmail.com>
+Date:   Tue May 9 18:21:22 2023 -0700
+
+    Added files for Set Page Controller and Set Model. Added Validation dependency in pom.xml
+
+[33mcommit f3d6ecc109a3c7e9e518adf8df8144c217053ae1[m
+Author: RCald_qdveicr <RCaldera674@gmail.com>
+Date:   Tue May 9 18:14:49 2023 -0700
+
+    Delete print statements
+
+[33mcommit f845f1455a7625ab62cd2c347a137f6e004b3150[m
+Merge: 8721e52 1203f09
+Author: RCald_qdveicr <RCaldera674@gmail.com>
+Date:   Tue May 9 18:11:45 2023 -0700
+
+    Fixed merge issue with test prints
+
+[33mcommit 8721e52cea0de624b7ad3a0f2bea3b97034d33f9[m
+Author: RCald_qdveicr <RCaldera674@gmail.com>
+Date:   Tue May 9 18:07:03 2023 -0700
+
+    Add test print line
+
+[33mcommit 1203f09d928c84c75daa03b1bd2023e0b06253db[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Tue May 9 18:06:52 2023 -0700
+
+    Add one test line
+
+[33mcommit cb5bf7de7b8a4b77cdf24c0424a057225d524658[m[33m ([m[1;31morigin/RC-Test[m[33m)[m
+Merge: 6ec075b cc28ecc
+Author: Crispy227 <daedalus227@gmail.com>
+Date:   Thu May 4 20:08:38 2023 -0700
+
+    Bro you changed firstName and lastName Resolved
+
+[33mcommit cc28ecc4ce780de4dd1ed76482240dd11609006f[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Thu May 4 20:05:32 2023 -0700
+
+    Change naming convention of firstName and lastName
+
+[33mcommit 6ec075beed12558d69048447dd464e53aa3383d9[m
+Merge: bc2ffd6 fd3a5ff
+Author: Crispy227 <daedalus227@gmail.com>
+Date:   Thu May 4 20:05:29 2023 -0700
+
+    Merge branch 'create-user-model'
+
+[33mcommit fd3a5ff96f477f5d6c15b3e261510810f786cf21[m
+Author: Crispy227 <daedalus227@gmail.com>
+Date:   Thu May 4 20:04:57 2023 -0700
+
+    Changed Naming of first_name and last_name
+
+[33mcommit bc2ffd64db1a6d8a5de250d3f0a5ebad3b17f46e[m
+Merge: 838ed01 476485c
+Author: Crispy227 <daedalus227@gmail.com>
+Date:   Thu May 4 19:58:57 2023 -0700
+
+    Merge branch 'create-user-model'
+
+[33mcommit 476485ce45d0924492d8d31c4d2f61cea947bb31[m
+Author: Crispy227 <daedalus227@gmail.com>
+Date:   Thu May 4 19:58:15 2023 -0700
+
+    Added Role and User Entites
+
+[33mcommit 838ed01b5efa74c9764a4a3962ff1dde9ee264f4[m
+Author: Kaielo <kdeocampo02@gmail.com>
+Date:   Thu May 4 19:32:45 2023 -0700
+
+    Undo changes in testing file
+
+[33mcommit 3e992a314136fdd16834b9a445ba49641a5c9313[m
+Merge: 08efca4 567a361
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Thu May 4 19:29:45 2023 -0700
+
+    Resolve print statement merge conflict
+
+[33mcommit 08efca4217d0885563aa74f9e5e301b8d44fb306[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Thu May 4 19:26:58 2023 -0700
+
+    Add print statement to test
+
+[33mcommit 567a36109beda3ee390e1e8168cc307eeb7b2065[m
+Author: Kaielo <kdeocampo02@gmail.com>
+Date:   Thu May 4 19:22:39 2023 -0700
+
+    Set model testing in the testing file
+
+[33mcommit f85b34f522d92e8bf3e2d620928b4180e5a1b901[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Tue May 2 20:13:47 2023 -0700
+
+    Establish navbar, footer, and main content for the landing
+
+[33mcommit 595e2a42b7106631cd98aa49e1e132e980541d71[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Fri Apr 14 01:44:13 2023 -0700
+
+    Set up PostgreSQL env variable credentials
+
+[33mcommit 58d2c8dc72f2ca74f3002781596ebda01d1accab[m
+Author: Gerard <gerard.gandionco@gmail.com>
+Date:   Thu Apr 13 17:57:04 2023 -0700
+
+    Initial commit

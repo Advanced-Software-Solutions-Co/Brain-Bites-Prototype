@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="icon" th:href="@{/assets/favicon.ico}" type="image/x-icon">
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">BrainBites</title>
+</head>
+<body>
+<div class="container-fluid">
+    <!-- Header -->
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img th:src="@{/assets/brainbites_logo.png}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    BrainBites
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="#">Log In</a>
+                        <a class="nav-link" href="#">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main page content -->
+    <main layout:fragment="main" class="p-4">
+        <div class="set-list">
+            <div class="row">
+                <!-- Signup form -->
+                <section class="col-4">
+
+                </section>
+            </div>
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-thumbnail" src="data:image/jpeg;base64,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" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Create a new set of flashcards.</h1>
+                    <p>Build better habits and start your journey on the right track!.</p>
+                    <a class="btn btn-primary" href="#!">Create Set</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">Explore more of your study sets down below:</p></div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+                <div th:each="set :${sets}"  class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 th:text="${set.title}"  class="card-title"></h2>
+                            <p th:text="${set.content}" class="card-text"></p>
+                            <div class="col-lg-7"><img src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." class="img-thumbnail"/></div>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Study</a></div>
+                    </div>
+                </div>
+    </main>
+    <!-- Footer -->
+    <footer class="d-flex flex-column flex-sm-row justify-content-evenly align-items-center">
+        <a href="#">Privacy Policy</a>
+        <div>Copyright &copy; 2023 <b>A</b>dvanced <b>S</b>oftware <b>S</b>olutions</div>
+        <a href="#">Terms & Conditions</a>
+    </footer>
+</div>
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!-- Custom javascript -->
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -6,4 +6,5 @@ import com.ass.brainbitesprototype.models.Set;
 import java.util.List;
 
 public interface SetService {
+    List<SetDto> findAllSets();
 }
