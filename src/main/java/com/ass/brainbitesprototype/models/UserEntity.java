@@ -20,9 +20,9 @@ public class UserEntity {
     @Id
     @GeneratedValue
     private Long id;
-    private String username;
     private String email;
     private String password;
+    private String passwordConfirm;
     private String firstName;
     private String lastName;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
