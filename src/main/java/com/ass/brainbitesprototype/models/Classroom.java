@@ -1,18 +1,14 @@
 package com.ass.brainbitesprototype.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity(name = "classrooms")
 public class Classroom {
     @Id
@@ -20,5 +16,7 @@ public class Classroom {
     private Long id;
 
     // TODO what does the classroom have?
-    private String name;  // ??
+    private String title;  // ??
+    private String photoUrl;
+    private String content;
 }
