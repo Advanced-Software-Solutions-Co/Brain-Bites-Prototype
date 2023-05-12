@@ -23,10 +23,16 @@ public class ClassroomPageController {
         return "classrooms-list";
     }
 
+    // TODO Implement create classroom for teacher us only
     @GetMapping("/classrooms/new")
     public String addClassroom(Model model) {
         Classroom classroom = new Classroom();
         model.addAttribute("classroom", classroom);
         return "classrooms-create";
+    }
+
+    @GetMapping("/classrooms/dashboard")
+    public String dashboardClassroom() {
+        return "classrooms-dashboard";
     }
 }
