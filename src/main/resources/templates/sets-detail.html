@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link rel="icon" th:href="@{/assets/favicon.ico}" type="image/x-icon">
+  <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">BrainBites</title>
+</head>
+<body>
+<div class="container-fluid">
+  <!-- Header -->
+  <header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img th:src="@{/assets/brainbites_logo.png}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          BrainBites
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="#">Log In</a>
+            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link " href="/sets">Sets</a>
+            <a class="nav-link " href="/classrooms">Classrooms</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main page content -->
+  <main layout:fragment="main" class="p-4">
+    <div class="set-list">
+      <div class="row">
+        <!-- Signup form -->
+        <section class="col-4">
+
+        </section>
+      </div>
+      <!-- Heading Row-->
+      <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-thumbnail" th:src="${set.photoUrl}" alt="..." /></div>
+        <div class="col-lg-5">
+          <h1 class="font-weight-light" th:text="${set.title}"></h1>
+          <div class="font-weight-light" th:text="${set.content}"></div>
+          <p>Enjoy Your Studying!</p>
+          <div class="card-footer"><a class="btn btn-danger btn-lg" href="#!">Delete Set</a></div>
+        </div>
+      </div>
+      <!-- Call to Action-->
+      <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">View the rest of your terms below:</p></div>
+      </div>
+      <!-- Content Row-->
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Flashcard Term Name</h2>
+              <p class="card-text">Flashcard Definition</p>
+            </div>
+            <div class="card-footer"><a class="btn btn-danger btn-lg" href="#!">Delete Term</a></div>
+          </div>
+        </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="d-flex flex-column flex-sm-row justify-content-evenly align-items-center">
+    <a href="#">Privacy Policy</a>
+    <div>Copyright &copy; 2023 <b>A</b>dvanced <b>S</b>oftware <b>S</b>olutions</div>
+    <a href="#">Terms & Conditions</a>
+  </footer>
+</div>
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!-- Custom javascript -->
+<script src="js/index.js"></script>
+</body>
+</html>

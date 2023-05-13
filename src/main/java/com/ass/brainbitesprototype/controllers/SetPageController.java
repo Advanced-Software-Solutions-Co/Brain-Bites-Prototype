@@ -35,6 +35,13 @@ public class SetPageController {
         return "sets-list";
     }
 
+    @GetMapping("/sets/{setId}")
+    public String setDetail(@PathVariable("setId") long setId, Model model) {
+        SetDto setDto = setService.findSetById(setId);
+        model.addAttribute("set", setDto);
+        return "sets-detail";
+    }
+
     @GetMapping("/sets/new")
     public String createSetForm(Model model) {
         Set set = new Set();
