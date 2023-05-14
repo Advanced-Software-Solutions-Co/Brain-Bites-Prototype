@@ -33,7 +33,7 @@ public class SecurityConfig {
         http.csrf().disable()  // TODO enable later??
                 // Allow anyone regardless of being logged in or not to access these endpoints.
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/login", "/register", "/register/**", "/", "/index", "/css/**", "/js/**")
+                        .requestMatchers("/login", "/register", "/register/**", "/", "/index", "/css/**", "/js/**", "/assets/**")
                         .permitAll().anyRequest().authenticated()
                 )
                 // Handle logging in of a user.
