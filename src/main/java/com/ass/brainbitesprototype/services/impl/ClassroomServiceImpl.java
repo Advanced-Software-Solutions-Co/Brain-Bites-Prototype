@@ -3,9 +3,9 @@ package com.ass.brainbitesprototype.services.impl;
 import com.ass.brainbitesprototype.dtos.ClassroomDto;
 import com.ass.brainbitesprototype.models.Classroom;
 import com.ass.brainbitesprototype.repositories.ClassroomRepository;
+import com.ass.brainbitesprototype.services.ClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.ErrorResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;
