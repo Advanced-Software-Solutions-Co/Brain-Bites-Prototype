@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.model.IAttribute;
 
 import java.text.AttributedString;
@@ -36,7 +33,7 @@ public class SetPageController {
     }
 
     @GetMapping("/sets/{setId}")
-    public String setDetail(@PathVariable("setId") long setId, Model model) {
+    public String setDetail(@PathVariable("setId") Long setId, Model model) {
         SetDto setDto = setService.findSetById(setId);
         model.addAttribute("set", setDto);
         return "sets-detail";
@@ -49,6 +46,21 @@ public class SetPageController {
         return "sets-create";
     }
 
+    @GetMapping("/sets/{setId}/delete")
+    public String deleteSet(@PathVariable("setId") Long setId){
+        setService.delete(setId);
+        return "redirect:/sets";
+    }
+
+    /*
+    @GetMapping("/sets/search")
+    public String searchSet(@RequestParam(value = "query") String query, Model model){
+        List<SetDto> sets = setService.searchSets(query);
+        model.addAttribute("sets", sets);
+        return "sets-list";
+    }
+    */
+
     @PostMapping("/sets/new")
     public String saveSet(@Valid @ModelAttribute("set") SetDto setDto, BindingResult result, Model model) {
         if(result.hasErrors()) {
@@ -60,23 +72,21 @@ public class SetPageController {
     }
 
     @GetMapping("/sets/{setId}/edit")
-    public String editSetForm(@PathVariable("setId") long setId, Model model) {
+    public String editSetForm(@PathVariable("setId") Long setId, Model model) {
         SetDto set = setService.findSetById(setId);
         model.addAttribute("set", set);
         return "sets-edit";
     }
 
     @PostMapping("/sets/{setId}/edit")
-    public String updateSet(@PathVariable("setId") Long setId, @Valid @ModelAttribute("set") SetDto set, BindingResult result) {
+    public String updateSet(@PathVariable("setId") Long setId, @Valid @ModelAttribute("set") SetDto set, BindingResult result, Model model) {
         if(result.hasErrors()) {
+            model.addAttribute("set", set);
             return "sets-edit";
         }
         set.setId(setId);
         setService.updateSet(set);
         return "redirect:/sets";
     }
-
-
-
 
 }

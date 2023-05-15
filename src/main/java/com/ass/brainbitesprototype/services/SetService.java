@@ -12,4 +12,8 @@ public interface SetService {
     SetDto findSetById(Long setId);
 
     void updateSet(SetDto set);
+
+    void delete(Long setId);
+
+    //List<SetDto> searchSets(String query);
 }
