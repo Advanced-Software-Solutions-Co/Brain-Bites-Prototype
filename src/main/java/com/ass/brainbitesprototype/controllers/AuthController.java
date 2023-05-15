@@ -40,14 +40,14 @@ public class AuthController {
         // An email is already being used.
         UserEntity existingUserEmail = userService.findByEmail(user.getEmail());
         if (existingUserEmail != null && existingUserEmail.getEmail() != null && !existingUserEmail.getEmail().isEmpty()) {
-            return "redirect:/register?fail";
+            return "redirect:/register?auth_fail";
         }
 
         // Passwords don't match.
         String password = user.getPassword();
         String passwordConfirm = user.getPasswordConfirm();
         if (!password.equals(passwordConfirm)) {
-            return "redirect:/register?fail";
+            return "redirect:/register?match_fail";
         }
 
         if (result.hasErrors()) {

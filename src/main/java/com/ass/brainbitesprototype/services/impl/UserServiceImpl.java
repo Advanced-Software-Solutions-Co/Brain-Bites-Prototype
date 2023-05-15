@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
     public void saveUser(RegistrationDto registrationDto) {
         // Create the user.
         UserEntity user = new UserEntity();
+        user.setUsername(registrationDto.getUsername());
         user.setEmail(registrationDto.getPassword());
         user.setFirstName(registrationDto.getFirstName());
         user.setLastName(registrationDto.getLastName());
@@ -39,6 +40,16 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Arrays.asList(role));
 
         userRepository.save(user);
+    }
+
+    @Override
+    public void saveStudent(RegistrationDto registrationDto) {
+
+    }
+
+    @Override
+    public void saveTeacher(RegistrationDto registrationDto) {
+
     }
 
     @Override

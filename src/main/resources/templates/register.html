@@ -9,7 +9,16 @@
 <body>
 <!-- Main page content -->
 <main layout:fragment="main" class="p-4">
-    <p>WIP</p>
+    <div class="row">
+        <section class="col-4"></section>
+
+        <!-- Signup form -->
+        <section class="col-4">
+            <div th:replace="~{fragments/_register-form.html :: register-form}"></div>
+        </section>
+
+        <section class="col-4"></section>
+    </div>
 </main>
 </body>
 </html>

@@ -30,7 +30,7 @@ public class SecurityConfig {
     // Filter requests and ensure users are properly authenticated.
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()  // TODO enable later??
+        http
                 // Allow anyone regardless of being logged in or not to access these endpoints.
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/login", "/register", "/register/**", "/", "/index", "/css/**", "/js/**", "/assets/**")
