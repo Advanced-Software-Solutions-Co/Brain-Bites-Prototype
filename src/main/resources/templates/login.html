@@ -9,7 +9,22 @@
 <body>
 <!-- Main page content -->
 <main layout:fragment="main" class="p-4">
-    <p>WIP</p>
+    <div class="row">
+        <section class="col-4"></section>
+
+        <!-- Login form -->
+        <section class="col-4">
+            <div th:if="${param.error}" class="alert alert-danger">
+                Invalid username and password
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                You have been logged out
+            </div>
+            <div th:replace="~{fragments/_login-form.html :: login-form}"></div>
+        </section>
+
+        <section class="col-4"></section>
+    </div>
 </main>
 </body>
 </html>

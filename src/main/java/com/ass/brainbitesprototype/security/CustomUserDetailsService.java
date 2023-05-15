@@ -34,8 +34,8 @@ public class CustomUserDetailsService implements UserDetailsService {
                             .collect(Collectors.toList())
             );
             return authenticatedUser;
+        } else {
+            throw new UsernameNotFoundException("Invalid username or password");
         }
-
-        throw new UsernameNotFoundException("Invalid username or password");
     }
 }

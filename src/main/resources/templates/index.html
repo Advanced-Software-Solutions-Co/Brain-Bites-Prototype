@@ -2,7 +2,8 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
+      layout:decorate="~{layout}"
+>
 <head>
     <title>Welcome to BrainBites!</title>
 </head>
@@ -20,67 +21,7 @@
 
                 <!-- Signup form -->
                 <section class="col-4">
-                    <form class="landing-signup-form" th:action="@{/register}" method="post">
-                        <div class="container">
-                            <!-- Form header -->
-                            <header class="row mb-1">
-                                <div class="col text-center m-3">
-                                    <h2>Sign up</h2>
-                                    <p class="faded">Join millions of other students in maximizing your study potential today!</p>
-                                </div>
-                            </header>
-
-                            <!-- Entering user info -->
-                            <div class="row mb-2">
-
-                                <div class="col m-2">
-                                    <!-- First & last names -->
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label class="form-label" for="first-name">First name</label>
-                                                <input class="form-control" type="text" placeholder="Leeroy" id="first-name" aria-label="First name">
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label" for="last-name">Last name</label>
-                                                <input class="form-control" type="text" placeholder="Jenkins" id="last-name" aria-label="Last name">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Username -->
-                                    <div class="mb-3">
-                                        <label class="form-label" for="username">Username</label>
-                                        <input class="form-control" type="text" placeholder="leeroy_jenkins" id="username" aria-label="Username">
-                                    </div>
-
-                                    <!-- Email address -->
-                                    <div class="mb-3">
-                                        <label class="form-label" for="email">Email address</label>
-                                        <input class="form-control" type="email" placeholder="leroy.jenkins@example.com" id="email" aria-label="Email">
-                                    </div>
-
-                                    <!-- Password & password confirmation -->
-                                    <div class="mb-3">
-                                        <label class="form-label" for="password">Password</label>
-                                        <input class="form-control" type="password" placeholder="supersecure123" id="password" aria-label="Password">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="password-confirm">Confirm password</label>
-                                        <input class="form-control" type="password" placeholder="supersecure123" id="password-confirm" aria-label="Confirm password">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Form submission -->
-                            <div class="row text-center mb-3">
-                                <div class="col d-flex flex-column justify-content-evenly mb-3">
-                                    <button class="mx-2 mb-2" type="submit">Register</button>
-                                    <a href="#">Aleady have an account?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <div th:replace="~{fragments/_register-form.html :: register-form}"></div>
                 </section>
 
                 <!-- Reviews section -->
