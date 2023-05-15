@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
 <head>
     <meta charset="UTF-8">
@@ -29,12 +30,12 @@
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
-                            <a class="nav-link" th:href="@{/login}">Log In</a>
-                            <a class="nav-link" th:href="@{/register}">Register</a>
-                            <a class="nav-link" th:href="@{/logout}">Log out</a>
-                            <a class="nav-link" th:href="@{/sets}">Sets</a>
-                            <a class="nav-link" th:href="@{sets/new}">Create a set</a>
-                            <a class="nav-link" th:href="@{/classrooms}">Classrooms</a>
+                            <a sec:authorize="!isAuthenticated()" class="nav-link" th:href="@{/login}">Log In</a>
+                            <a sec:authorize="!isAuthenticated()" class="nav-link" th:href="@{/register}">Register</a>
+                            <a sec:authorize="isAuthenticated()" class="nav-link" th:href="@{/logout}">Log out</a>
+                            <a sec:authorize="isAuthenticated()" class="nav-link" th:href="@{/sets}">Sets</a>
+                            <a sec:authorize="isAuthenticated()" class="nav-link" th:href="@{sets/new}">Create a set</a>
+                            <a sec:authorize="isAuthenticated()" class="nav-link" th:href="@{/classrooms}">Classrooms</a>
                         </div>
                     </div>
                 </div>
