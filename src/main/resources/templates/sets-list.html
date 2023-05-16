@@ -11,6 +11,11 @@
     <!-- Main page content -->
     <main layout:fragment="main" class="p-4">
         <div class="set-list">
+            <div>
+                <form th:action="@{/sets/search}" class="form-inline my-2 my-lg-0 mb-3"> <!--search-->
+                    <input name="query" class="form-control me-sm-2 mb-5" type="search" placeholder="Search learning sets" aria-label="Search">
+                </form>
+            </div>
             <div class="row">
                 <!-- Signup form -->
                 <section class="col-4">

@@ -24,7 +24,7 @@
           <h1 class="font-weight-light" th:text="${set.title}"></h1>
           <div class="font-weight-light" th:text="${set.content}"></div>
           <p>Enjoy Your Studying!</p>
-          <div class="card-footer"><a class="btn btn-danger btn-lg" href="#!">Delete Set</a></div>
+          <div class="card-footer"><a class="btn btn-danger btn-lg" th:href="@{/sets/{setId}/delete(setId=${set.id})}">Delete Set</a></div>
         </div>
       </div>
       <!-- Call to Action-->

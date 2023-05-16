@@ -85,7 +85,6 @@ public class SetPageController {
         return "redirect:/sets";
     }
 
-    /*
     @GetMapping("/sets/search")
     public String searchSet(@RequestParam(value = "query") String query, Model model){
         List<SetDto> sets = setService.searchSets(query);
@@ -102,7 +101,6 @@ public class SetPageController {
 
         return "sets-list";
     }
-    */
 
 
     @PostMapping("/sets/new")
