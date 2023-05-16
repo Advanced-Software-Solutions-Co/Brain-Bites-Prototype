@@ -3,25 +3,28 @@ package com.ass.brainbitesprototype.controllers;
 import com.ass.brainbitesprototype.dtos.SetDto;
 import com.ass.brainbitesprototype.models.Set;
 //import service
+import com.ass.brainbitesprototype.models.UserEntity;
+import com.ass.brainbitesprototype.security.SecurityUtil;
 import com.ass.brainbitesprototype.services.SetService;
+import com.ass.brainbitesprototype.services.impl.UserServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.model.IAttribute;
 
-import java.text.AttributedString;
 import java.util.List;
 
 @Controller
 public class SetPageController {
     private SetService setService;
+    private UserServiceImpl userService;
 
     @Autowired
-    public SetPageController(SetService setService) {
+    public SetPageController(SetService setService, UserServiceImpl userService) {
         this.setService = setService;
+        this.userService = userService;
     }
 
     @GetMapping("/sets")
@@ -29,6 +32,16 @@ public class SetPageController {
     public String listSets(Model model) {
         List<SetDto> sets = setService.findAllSets();
         model.addAttribute("sets", sets);
+
+        // Insert profile picture of user into navbar if authenticated.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
+        model.addAttribute("user", user);
+
         return "sets-list";
     }
 
@@ -36,6 +49,16 @@ public class SetPageController {
     public String setDetail(@PathVariable("setId") Long setId, Model model) {
         SetDto setDto = setService.findSetById(setId);
         model.addAttribute("set", setDto);
+
+        // Insert profile picture of user into navbar if authenticated.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
+        model.addAttribute("user", user);
+
         return "sets-detail";
     }
 
@@ -43,6 +66,16 @@ public class SetPageController {
     public String createSetForm(Model model) {
         Set set = new Set();
         model.addAttribute( "set", set);
+
+        // Insert profile picture of user into navbar if authenticated.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
+        model.addAttribute("user", user);
+
         return "sets-create";
     }
 
@@ -57,9 +90,20 @@ public class SetPageController {
     public String searchSet(@RequestParam(value = "query") String query, Model model){
         List<SetDto> sets = setService.searchSets(query);
         model.addAttribute("sets", sets);
+
+        // Insert profile picture of user into navbar if authenticated.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
+        model.addAttribute("user", user);
+
         return "sets-list";
     }
     */
+
 
     @PostMapping("/sets/new")
     public String saveSet(@Valid @ModelAttribute("set") SetDto setDto, BindingResult result, Model model) {
@@ -75,6 +119,16 @@ public class SetPageController {
     public String editSetForm(@PathVariable("setId") Long setId, Model model) {
         SetDto set = setService.findSetById(setId);
         model.addAttribute("set", set);
+
+        // Insert profile picture of user into navbar if authenticated.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
+        model.addAttribute("user", user);
+
         return "sets-edit";
     }
 

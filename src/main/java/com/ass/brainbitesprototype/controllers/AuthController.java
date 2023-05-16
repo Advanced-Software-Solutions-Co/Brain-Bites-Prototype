@@ -2,6 +2,7 @@ package com.ass.brainbitesprototype.controllers;
 
 import com.ass.brainbitesprototype.dtos.RegistrationDto;
 import com.ass.brainbitesprototype.models.UserEntity;
+import com.ass.brainbitesprototype.security.SecurityUtil;
 import com.ass.brainbitesprototype.services.impl.UserServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,27 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String loginPage() {
+    public String loginPage(Model model) {
+        // Redirect somewhere else if already logged in.
+        UserEntity user = new UserEntity();
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            return "redirect:/sets";
+        }
+        model.addAttribute("user", user);
         return "login";
     }
 
     @GetMapping("/register")
     public String getRegisterForm(Model model) {
         RegistrationDto user = new RegistrationDto();
+
+        // Redirect somewhere else if already logged in.
+        String username = SecurityUtil.getSessionUser();
+        if (username != null) {
+            return "redirect:/sets";
+        }
+
         model.addAttribute("user", user);
         return "register";
     }
@@ -56,6 +71,8 @@ public class AuthController {
         }
 
         userService.saveUser(user);
+
+        System.out.println(user.getUsername() + " has been added!");
         return "redirect:/sets?success";  // TODO change to home?success maybe
     }
 }

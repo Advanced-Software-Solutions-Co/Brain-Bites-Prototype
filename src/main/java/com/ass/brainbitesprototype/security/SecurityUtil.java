@@ -10,7 +10,6 @@ public class SecurityUtil {
     public static String getSessionUser() {
         // Authentication status of the user (get info from cookies).
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentUsername = authentication.getName();
             return currentUsername;
