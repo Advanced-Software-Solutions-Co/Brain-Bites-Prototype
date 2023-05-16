@@ -15,5 +15,5 @@ public interface SetService {
 
     void delete(Long setId);
 
-    //List<SetDto> searchSets(String query);
+    List<SetDto> searchSets(String query);
 }

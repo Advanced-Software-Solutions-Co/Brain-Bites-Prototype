@@ -52,14 +52,12 @@ public class SetPageController {
         return "redirect:/sets";
     }
 
-    /*
     @GetMapping("/sets/search")
     public String searchSet(@RequestParam(value = "query") String query, Model model){
         List<SetDto> sets = setService.searchSets(query);
         model.addAttribute("sets", sets);
         return "sets-list";
     }
-    */
 
     @PostMapping("/sets/new")
     public String saveSet(@Valid @ModelAttribute("set") SetDto setDto, BindingResult result, Model model) {

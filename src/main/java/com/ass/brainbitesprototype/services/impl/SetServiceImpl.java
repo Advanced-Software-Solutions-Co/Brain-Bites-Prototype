@@ -52,14 +52,12 @@ public class SetServiceImpl implements SetService {
         setRepository.deleteById(setId);
     }
 
-    /*
+
     @Override
     public List<SetDto> searchSets(String query) {
         List<Set> sets = setRepository.searchSets(query);
         return sets.stream().map(set -> mapToSetDto(set)).collect(Collectors.toList());
-
     }
-     */
 
     private Set mapToSet(SetDto set) {
         Set setDto = Set.builder()
