@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+>
+<head>
+    <title>Create a Classroom</title>
+</head>
+<body>
+<!-- Main page content -->
+<main layout:fragment="main" class="p-5">
+    <div class="classrooms-create" >
+        <div class="row" >
+            <form role="form" method="post" th:action="@{/classrooms/new}" th:object="${classroom}">
+                <div class="form-group mb-3">
+                    <label for="title">Classroom Title</label>
+                    <input type="text"
+                           class="form-control"
+                           id="title"
+                           name="title"
+                           th:field="*{title}"
+                           placeholder="Title">
+                    <p th:if="${#fields.hasErrors('title')}" class="text-danger" th:errors="*{title}"></p>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="content">Classroom Description</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            name="content"
+                            id="content"
+                            th:field="*{content}"
+                            placeholder="This classroom is about...">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="photoUrl">Add a photo to this set using a URL link</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            name="photoUrl"
+                            id="photoUrl"
+                            th:field="*{photoUrl}"
+                            placeholder="Place a URL link of a photo from online!">
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Create Classroom</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

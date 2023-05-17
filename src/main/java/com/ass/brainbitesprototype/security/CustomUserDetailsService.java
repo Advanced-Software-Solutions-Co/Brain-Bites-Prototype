@@ -21,17 +21,19 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    // Load core user information when user attempts to authenticate with Spring security.
+    // Load UserDetails information during the authentication process.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userRepository.findFirstByUsername(username);
         if (user != null) {
-            User authenticatedUser = new User(
+            User authenticatedUser = new CustomUser(
                     user.getUsername(),
                     user.getPassword(),
                     // Each role represented as a single authority.
                     user.getRoles().stream().map((role) -> new SimpleGrantedAuthority(role.getName()))
-                            .collect(Collectors.toList())
+                            .collect(Collectors.toList()),
+                    user.getFirstName(),
+                    user.getLastName()
             );
             return authenticatedUser;
         } else {
