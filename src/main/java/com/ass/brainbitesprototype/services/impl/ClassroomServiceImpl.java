@@ -12,12 +12,11 @@ import java.util.stream.Collectors;
 
 @Service
 public class ClassroomServiceImpl implements ClassroomService {
+    private ClassroomRepository classroomRepository;
     @Autowired
     public ClassroomServiceImpl(ClassroomRepository classroomRepository) {
         this.classroomRepository = classroomRepository;
     }
-
-    private ClassroomRepository classroomRepository;
 
     @Override
     public List<ClassroomDto> findAllClassrooms() {
@@ -29,6 +28,12 @@ public class ClassroomServiceImpl implements ClassroomService {
     public ClassroomDto findClassroomById(long classroomId) {
         Classroom classroom = classroomRepository.findById(classroomId).get();
         return mapToClassroomDto(classroom);
+    }
+
+    @Override
+    public Classroom saveClassroom(ClassroomDto classroomDto) {
+        Classroom classroom = mapToClassroom(classroomDto);
+        return classroomRepository.save(classroom);
     }
 
     private Classroom mapToClassroom(ClassroomDto classroom) {
