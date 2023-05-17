@@ -12,8 +12,8 @@
     <main layout:fragment="main" class="p-4">
         <div class="set-list">
             <div>
-                <form th:action="@{/sets/search}" class="form-inline my-2 my-lg-0 mb-3"> <!--search-->
-                    <input name="query" class="form-control me-sm-2 mb-5" type="search" placeholder="Search learning sets" aria-label="Search">
+                <form th:action="@{/sets/search}" class="form-inline my-2 my-lg-0 mb-5"> <!--search-->
+                    <input name="query" class="form-control me-sm-2 mb-2" type="search" placeholder="Search learning sets" aria-label="Search">
                 </form>
             </div>
             <div class="row">
@@ -23,28 +23,31 @@
                 </section>
             </div>
             <!-- Heading Row-->
-            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center my-1">
                 <div class="col-lg-5">
                     <h1 class="font-weight-light">Create a new set of flashcards.</h1>
                     <p>Build better habits and start your journey on the right track!.</p>
-                    <a class="btn btn-primary" href="/sets/new">Create Set</a>
+                    <a class="btn btn-primary mb-4" href="/sets/new">Create Set</a>
                 </div>
             </div>
             <!-- Call to Action-->
-            <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body"><p class="text-white m-0">Explore more of your study sets down below:</p></div>
-            </div>
             <!-- Content Row-->
             <div class="row gx-4 gx-lg-5">
                 <div th:each="set :${sets}"  class="col-md-4 mb-5">
                     <div class="card h-100">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column align-items-start">
                             <h2 th:text="${set.title}"  class="card-title"></h2>
                             <p th:text="${set.content}" class="card-text"></p>
-                            <div class="col-lg-7"><img th:src="${set.photoUrl}" alt="..." class="img-thumbnail"/></div>
+                            <div class="col-lg-7 align-self-center"><img th:src="${set.photoUrl}" alt="..." class="img-thumbnail" width="300" height="300"></div>
                         </div>
-                        <div class="btn btn-primary btn-md center-block"><a class="btn btn-primary btn-sm" th:href="@{/sets/{setId}(setId=${set.id})}">Study</a></div>
-                        <div class="btn btn-info btn-md center-block"><a class="btn btn-info btn-sm" th:href="@{/sets/{setId}/edit(setId=${set.id})}">Edit</a></div>
+                        <div class="btn btn-primary btn-md center-block m-1"><a class="btn btn-primary btn-sm" th:href="@{/sets/{setId}(setId=${set.id})}">Study</a></div>
+<!--                        <form class="form-button m-2">-->
+<!--                            <button type="submit" method="post" th:action="@{/sets/{setId}(setId=${set.id})}">Study</button>-->
+<!--                        </form>-->
+                        <div class="btn btn-info btn-md center-block m-2"><a class="btn btn-info btn-sm" th:href="@{/sets/{setId}/edit(setId=${set.id})}">Edit</a></div>
+<!--                        <form class="form-button-2 m-2">-->
+<!--                            <button type="submit" method="post" th:action="@{/sets/{setId}/edit(setId=${set.id})}">Edit</button>-->
+<!--                        </form>-->
                     </div>
                 </div>
             </div>

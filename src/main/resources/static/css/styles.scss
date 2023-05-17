@@ -6,19 +6,60 @@ form {
   background-color: whitesmoke;
   border-radius: 20px;
   box-shadow: rgba(13, 13, 15, 0.3) 0px 2px 3px 0px, rgba(13, 13, 15, 0.15) 0px 2px 4px 2px;
-
-  button {
-    color: whitesmoke;
-    border-radius: 7px;
-    padding: 0.5em;
-    background-color: #023047;
-    border: none;
-    &:hover, &:active {
-      box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-    }
-  }
   a {
     text-decoration: none;
+  }
+}
+
+.form-button {
+  color: whitesmoke;
+  border-radius: 7px;
+  background-color: #023047;
+  border: none;
+  &:hover, &:active {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  }
+  button {
+    width: 100%;
+    display: block;
+    color: white;
+  }
+}
+
+.form-button-2 {
+  color: whitesmoke;
+  border-radius: 7px;
+  background-color: #219EBC;
+  border: none;
+  &:hover, &:active {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  }
+  button {
+    width: 100%;
+    display: block;
+    color: white;
+  }
+}
+
+.card {
+  background-color: whitesmoke;
+  .btn-primary {
+    background-color: #023047;
+    border-radius: 7px;
+    padding: 0.5em;
+    border: none;
+    &:active {
+      background-color: black;
+    }
+  }
+  .btn-info {
+    background-color: #8ECAE6;
+    border-radius: 7px;
+    padding: 0.5em;
+    border: none;
+    &:active {
+      background-color: #219EBC;
+    }
   }
 }
 
